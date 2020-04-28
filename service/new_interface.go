@@ -2,6 +2,8 @@ package service
 
 import (
 	"fmt"
+	"math/rand"
+	"strconv"
 	"time"
 
 	"github.com/eth_tools/transaction"
@@ -19,10 +21,10 @@ func NewInterface() {
 	fromKeyStoreFilePath := myConfig.Read("interface_test", "fromKeyStoreFilePath")
 	fromPwd := myConfig.Read("interface_test", "fromPwd")
 
-	//rand.Seed(time.Now().Unix())
-	//s, _ := strconv.ParseFloat(strconv.Itoa(rand.Intn(3000)), 32) //3以内的小数
-	//etherAmount := s / 1000
-	etherAmount := 10000.0
+	rand.Seed(time.Now().Unix())
+	s, _ := strconv.ParseFloat(strconv.Itoa(rand.Intn(3000)), 32) //3以内的小数
+	etherAmount := s / 1000
+	
 	//创建客户端
 	client, err := ethclient.Dial(url)
 	if err != nil {
