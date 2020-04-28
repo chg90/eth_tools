@@ -1,0 +1,5 @@
+.idea/
+common.conf
+
+/vendor
+!/vendor/vendor.json

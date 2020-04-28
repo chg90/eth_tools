@@ -1,6 +1,5 @@
-fromAddress = ""
-toAddress = ""
-
-fromAddressPrivateKey = ""
-
-nodeAddress = ""
+[interface_test]
+url =
+to =
+fromKeyStoreFilePath =
+fromPwd =
