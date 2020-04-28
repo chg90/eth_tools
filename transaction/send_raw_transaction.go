@@ -48,7 +48,7 @@ func (s *SendTransaction) SendRawTransaction() (err error) {
 	fromAddr := crypto.PubkeyToAddress(fromPublicKey)
 
 	// 获取私钥方式二，通过私钥字符串
-	//privateKey, err := crypto.HexToECDSA("私钥字符串")
+	//privateKey, err := crypto.HexToECDSA("s.FromPrivateKey")
 
 	// 数量
 	amount := util.ToWei(s.EthAmount, 18)
@@ -72,14 +72,14 @@ func (s *SendTransaction) SendRawTransaction() (err error) {
 	auth := bind.NewKeyedTransactor(fromPrivateKey)
 	//auth,err := bind.NewTransactor(strings.NewReader(mykey),"111")
 	auth.Nonce = big.NewInt(int64(nonce))
-	auth.Value = amount      // in wei
+	auth.Value = amount      // wei
 	auth.GasLimit = gasLimit // in units
 	auth.GasPrice = gasPrice
 	auth.From = fromAddr
 
 	// 交易创建
 	tx := types.NewTransaction(nonce, s.To, amount, gasLimit, gasPrice, []byte{})
-	// 交易签名
+	// 签名
 	signedTx, err := auth.Signer(types.HomesteadSigner{}, auth.From, tx)
 	//signedTx ,err := types.SignTx(tx,types.HomesteadSigner{},fromPrivkey)
 
