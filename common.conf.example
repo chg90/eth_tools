@@ -3,3 +3,9 @@ url =
 to =
 fromKeyStoreFilePath =
 fromPwd =
+
+[mail]
+user = XXXXX@qq.com
+pwd = xxxxx
+host = smtp.qq.com
+port = 587
