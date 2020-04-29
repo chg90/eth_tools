@@ -3,3 +3,6 @@ common.conf
 
 /vendor
 !/vendor/vendor.json
+
+eth_tools.exe
+eth_tools
