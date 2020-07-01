@@ -12,6 +12,7 @@ import (
 	"github.com/ethereum/go-ethereum/ethclient"
 )
 
+//测试新接口稳定性
 func NewInterface() {
 	myConfig := new(util.Config)
 	myConfig.InitConfig("common.conf")
