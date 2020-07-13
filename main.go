@@ -10,5 +10,7 @@ func main() {
 	//	fmt.Println(err)
 	//}
 
-	service.GetBalance()
+	//service.GetBalance()
+
+	service.RangeBlocks()
 }
